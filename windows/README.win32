@@ -12,6 +12,7 @@ Windows 下编译 MudOS
 Windows NT/95 下编译, 你需要:
 MS VC++ 2.0 或更高版本 (当然版本不能太高, 在 Borland 或其他编译器下没有做过测试)
 gnu bison 和 sed, 最初在 ftp.cc.utexas.edu 的 winnt 部分获取, 现在建议在其他网上资源寻找.
+gnu 工具在 win32 的版本可在 http://gnuwin32.sourceforge.net/ 找一下.
 
 具体步骤:
 0. 将当前目录中 .mak 和 .bat 文件移动到源代码的根目录下, 然后运行 CLEAN.BAT - 将会清理之前编译的无用文件
