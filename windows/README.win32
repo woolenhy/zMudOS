@@ -1,36 +1,28 @@
-		 MudOS for Windows 95 and Windows NT
-	       Port by George Reese (Descartes of Borg)
+===== 用于 Windows 95 和 Windows NT 的 MudOS =====
 
-This port has a few crashers in it.  Known bugs include:
-	* connect() gives an WASEWOULDBLOCK error (*boggle*)
-	  for connecting to the address server or socket efuns
-	* bug in reading DOS files (files with \r\n)
-	  this is probably fixed in v21.6
-	* some bug in call outs 
-	* Right now the proper calls to WSAGetLastError() are not made
+代码由于由 Linux 环境下转换而来，存在一些 BUG，已知的 BUG 如下：
+	* connect() 用于连接到 address server 或 socket efuns 会出现 WASEWOULDBLOCK 错误
+	* 读取 DOS 格式的文件(换行标记为 \r\n), 貌似在 v21.6 修复了
+	* 部分 call outs BUG
+	* 不能正确的调用 WSAGetLastError()
 
-This is not a simple compile yet, unfortunately.  Perhaps someone can
-fix the above bugs and simplify the make process?  If so, please mail
-your fixes to beek@imaginary.com.
+Windows 下编译 MudOS
+不幸的是, 这并不是简单的编译过程, 如果有人能够解决上述 BUG 和问题请与我联系.
 
-To compile MudOS for Windows NT/95, you need:
-MS VC++ 2.0 or later (dunno about Borland or other compilers)
-gnu bison and sed, get them from ftp.cc.utexas.edu in the winnt section
+Windows NT/95 下编译, 你需要:
+MS VC++ 2.0 或更高版本 (当然版本不能太高, 在 Borland 或其他编译器下没有做过测试)
+gnu bison 和 sed, 最初在 ftp.cc.utexas.edu 的 winnt 部分获取, 现在建议在其他网上资源寻找.
 
-Steps:
-0. move the .mak and .bat files in this directory to the main source directory
-   and run CLEAN.BAT - this removes all files generated during compile
-1. Open up edit_source.mak
-2. From the command prompt run STEP1.BAT
-3. Build edit_source.exe
-4. From the DOS command line, execute STEPDBG.BAT (in case you're building
-    debug version) or STEPREL.BAT (in case you're building release ver)
-5. Open up mudos.mak
-6. Build mudos.exe
-7. Open addr_server.mak
-8. Build addr_server.exe
-9. Install your lib and run mudos
+具体步骤:
+0. 将当前目录中 .mak 和 .bat 文件移动到源代码的根目录下, 然后运行 CLEAN.BAT - 将会清理之前编译的无用文件
+1. 打开 edit_source.mak
+2. 在命令行下运行 STEP1.BAT
+3. 生成 edit_source.exe
+4. 在命令行中, 执行 STEPDBG.BAT (如果要生成调试版本) 或 STEPREL.BAT (如果要生成发布版本)
+5. 打开 mudos.mak
+6. 生成 mudos.exe
+7. 打开 addr_server.mak
+8. 生成 addr_server.exe
+9. 安装你的 lib 并运行 mudos
 
-Note: if you want to create a DEBUG version of MudOS you have to define
-DEBUG symbol either in STD.H or in project setting in both EDIT_SOURCE and
-MUDOS.
+注意: 如果你想创建一个 MudOS 的 DEBUG 版本, 你必须在 STD.H 或 EDIT_SOURCE 和 MUDOS 项目设置中定义 DEBUG 调试符号.
