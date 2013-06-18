@@ -18,7 +18,7 @@ gnu bison 和 sed, 最初在 ftp.cc.utexas.edu 的 winnt 部分获取, 现在建
 1. 打开 edit_source.mak
 2. 在命令行下运行 STEP1.BAT
 3. 生成 edit_source.exe
-4. 在命令行中, 执行 STEPDBG.BAT (如果要生成调试版本) 或 STEPREL.BAT (如果要生成发布版本)
+4. 在命令行中, 执行 STEPDBG.BAT (如果要生成调试版本) 或 STEPREL.BAT (如果要生成发布版本), 注意更改其中的路径.
 5. 打开 mudos.mak
 6. 生成 mudos.exe
 7. 打开 addr_server.mak
